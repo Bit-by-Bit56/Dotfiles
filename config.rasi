@@ -1,0 +1,123 @@
+@theme "/dev/null"
+
+* {
+  nord0: #2E3440;
+  nord1: #3B4252;
+  nord2: #434C5E;
+  nord3: #4C566A;
+  nord4: #D8DEE9;
+  nord5: #E5E9F0;
+  nord6: #ECEFF4;
+  nord7: #8FBCBB;
+  nord8: #88C0D0;
+  nord9: #81A1C1;
+  nord10: #5E81AC;
+  nord11: #BF616A;
+  nord12: #D08770;
+  nord13: #EBCB8B;
+  nord14: #A3BE8C;
+  nord15: #B48EAD;
+
+  background-color: transparent;
+  foreground-color: @nord4;
+  selected-background: @nord7;
+  selected-foreground: @nord0;
+  active-color: @nord9;
+  urgent-color: @nord11;
+  border-color: @nord9;
+}
+
+configuration {
+  show-icons: true;
+  icon-theme: "Papirus";
+  location: 0;
+  font: "JetBrainsMono Nerd Font Medium 10";
+  display-drun: "Launch:";
+  modi: "run,drun";
+}
+
+window {
+  width: 35%;
+  transparency: "real";
+  background-color: rgba(46,52,64,0.9);
+  border-color: @border-color;
+  border: 1px;
+  border-radius: 8px;
+  padding: 10px;
+  anchor: center;
+  location: center;
+  children: [mainbox];
+}
+
+mainbox {
+  orientation: vertical;
+  children: [inputbar, listview];
+  spacing: 8px;
+}
+
+inputbar {
+  background-color: @nord1;
+  border-radius: 6px;
+  padding: 10px 12px;
+  spacing: 12px;
+  children: [prompt, entry];
+}
+
+prompt {
+  text-color: @nord9;
+  padding: 0px;
+  margin: 0px;
+}
+
+entry {
+  text-color: @nord6;
+  padding: 0px;
+  margin: 0px;
+}
+
+listview {
+  background-color: @nord0;
+  columns: 1;
+  lines: 8;
+  padding: 8px;
+  border-radius: 6px;
+  spacing: 4px;
+}
+
+element {
+  padding: 8px 12px;
+  text-color: @foreground-color;
+  border-radius: 4px;
+}
+
+element selected {
+  background-color: @selected-background;
+  text-color: @selected-foreground;
+}
+
+element-text {
+  background-color: inherit;
+  text-color: inherit;
+  vertical-align: 0.5;
+}
+
+element-icon {
+  size: 1.5em;
+  margin: 0px 8px 0px 0px;
+  background-color: inherit;
+}
+
+scrollbar {
+  handle-width: 5px;
+  padding: 0;
+  background-color: transparent;
+  handle-color: @nord3;
+}
+
+message {
+  background-color: @nord1;
+  text-color: @nord6;
+  border-radius: 6px;
+  padding: 12px;
+  margin: 8px 0px 0px 0px;
+}
